@@ -33,8 +33,8 @@ namespace MCDawn
             }
             else
             {
-                Player.SendMessage(p, "This server runs on &bMCDawn" + Server.DefaultColor + ", a Minecraft Classic Server Software that is created by the MCDawn Dev Team. Using MCLawl as a basis, it is actively developed with numerous administration tools and options made for server owners, admins, and operators. Whilst providing a quality set of moderation tools, MCDawn simultaneously offers a unique experience for players in-game with a wide variety of blocks and commands for excellent builders.");
-                Player.SendMessage(p, "This server's version: &a" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                Player.SendMessage(p, "This server runs on &9OpenNet" + Server.DefaultColor + ", which is based off MCDawn, and is being developed by sillyboyization for AsiaNet community.");
+                Player.SendMessage(p, "This server's version: &eVanillaIceCream " + Server.DefaultColor + " - &a" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
 
                 TimeSpan up = DateTime.Now - Server.timeOnline;
                 string upTime = "Time online: &b";

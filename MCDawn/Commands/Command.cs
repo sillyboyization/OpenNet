@@ -35,11 +35,6 @@ namespace MCDawn
             all.Add(new CmdHSpawn());
             all.Add(new CmdHZone());
 
-            //Groups
-            //all.Add(new CmdGroup());
-            //all.Add(new CmdCreateGroup());
-            //all.Add(new CmdDeleteGroup());
-
             all.Add(new CmdAbort());
             all.Add(new CmdAbout());
             all.Add(new CmdAdminChat());
@@ -303,6 +298,31 @@ namespace MCDawn
             all.Add(new CmdPyramid());
 
             //all.Add(new Commands.GameControl.CmdGame());
+
+            #region OpenNet Added Commands/Features
+
+            /* VERSION 1.0 */
+            all.Add(new CmdDetain()); //Detain a player on a specific map
+            //Added detained bool in Player class
+            //Added detained-checker in CmdGoto class
+            all.Add(new CmdSuggest()); //Send suggestions to me :3
+            /*all.Add(new CmdXTitle()); //Give used-player a title
+            all.Add(new CmdXTColor());*/
+            //all.Add(new CmdSwear()); //Toggle swear censoring mode, undone
+            all.Add(new CmdPunch()); //Punch someone :3
+            all.Add(new CmdKillMobs()); //Kill all existing block on users' current map
+            all.Add(new CmdInherit());
+            all.Add(new CmdInfluence());
+            all.Add(new CmdRotate());
+            all.Add(new CmdInstaMap());
+            all.Add(new CmdC4());
+            //added bombset bool
+            //----- bombpos int array
+            all.Add(new CmdOP());
+            all.Add(new CmdBeacon());
+            //----- kill distance in gun
+
+            #endregion 
 
             core.commands = new List<Command>(all.commands);
 

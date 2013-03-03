@@ -32,6 +32,12 @@ namespace MCDawn
                         if (foundLevel.locked == true && p.level != foundLevel) { Player.SendMessage(p, "This map is currently locked!"); return; }
                         if (p.level.locked == true && p.level != foundLevel) { Player.SendMessage(p, "This map is currently locked!"); return; }
                     }
+                    if (p.detained) 
+                    { 
+                        Player.SendMessage(p, "You can't leave the map that you got detained on!");
+                        Player.GlobalMessageOps("To Ops: Detained player, " + p.color + p.name + Server.DefaultColor + " attempted to leave a map while in detention.");
+                        return;
+                    }
                     if (p.level.zombiegame == true && p.level != foundLevel) { Player.SendMessage(p, "You can't leave an Infection game!"); return; }
                     if (foundLevel.zombiegame == true && p.level != foundLevel) { Player.SendMessage(p, "Infection is active on that map, you can't go to it!"); return; }
                     if (p.level.spleefstarted == true && p.level != foundLevel) { Player.SendMessage(p, "You can't leave a Spleef game!"); return; }

@@ -133,7 +133,6 @@ namespace MCDawn
         public bool pushBallEnabled = false;
 
         public List<PlayerBot> playerbots { get { return getPlayerBots(); } }
-
         // Reflection
         // Dictionary works as playername, reflectionstruct
         public Dictionary<string, Reflection> reflections = new Dictionary<string, Reflection>();
@@ -182,6 +181,9 @@ namespace MCDawn
 
         List<Check> ListCheck = new List<Check>();  //A list of blocks that need to be updated
         List<Update> ListUpdate = new List<Update>();  //A list of block to change after calculation
+
+        //RandomArseBomb
+        public bool randomabmode = false;
 
         //CTF STUFF
         public CTFGame ctfgame = new CTFGame();
@@ -3712,8 +3714,6 @@ namespace MCDawn
             }
         }
         //================================================================================================================
-
-
 
         public void odoor(Check C)
         {

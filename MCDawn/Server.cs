@@ -113,6 +113,7 @@ namespace MCDawn
         //internal static readonly List<string> globalChatMods = new List<string>(new string[] { "Jonny", "[Dev]Jonny", "[Op]Jonny", "GameMakerGm", "[Op]Game", "_", "Katz", "Notch", "ScHmIdTy56789", "sillyboyization", "Sandford27", "ddeckys", "[Mod]ddeckys", "Incedo", "Speedkicks6" });
 
         public static List<string> devs { get { return new List<string>() { "jonnyli1125", "sillyboyization" }; } }
+        public static List<string> opennetdevs { get { return new List<string>() { }; } }
         public static List<string> staff { get { return new List<string>(); } }
         public static List<string> administration { get { return new List<string>() { }; } }
         // Booleans, easier and faster than Server.devs.Contains etc :P
@@ -435,6 +436,10 @@ namespace MCDawn
         public static LevelPermission reviewnext = LevelPermission.Operator;
         public static LevelPermission reviewclear = LevelPermission.Operator;
 
+        // Ocarina
+        public static List<Player> FortubePlayed = new List<Player>();
+        public static int Fortune = 0;
+
         // Spleef
         public static LevelPermission spleefperm = LevelPermission.Operator;
         #endregion
@@ -478,6 +483,7 @@ namespace MCDawn
                 if (File.Exists("autoload.txt")) File.Move("autoload.txt", "text/autoload.txt");
                 if (File.Exists("IRC_Controllers.txt")) File.Move("IRC_Controllers.txt", "ranks/IRC_Controllers.txt");
                 if (File.Exists("agreedtorules.txt")) File.Move("agreedtorules.txt", "text/agreedtorules.txt");
+                if (!File.Exists("seegundistance.txt")) { File.CreateText("seegundistance.txt"); File.Move("seegundistance.txt", "text/seegundistance.txt"); }
                 if (Server.useWhitelist) if (File.Exists("whitelist.txt")) File.Move("whitelist.txt", "ranks/whitelist.txt");
             } catch { }
 

@@ -15,6 +15,7 @@ namespace MCDawn
 
         public override void Use(Player p, string message)
         {
+            string Time = DateTime.Now.ToString("HH:mm:ss");
             if (message == "") { Help(p); return; }
             Player.GlobalChat(p, message, false);
             IRCBot.Say(message);

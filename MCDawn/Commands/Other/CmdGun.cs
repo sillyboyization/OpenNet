@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.IO;
 
 namespace MCDawn
 {
@@ -16,7 +17,7 @@ namespace MCDawn
         public override void Use(Player p, string message)
         {
             if (!p.level.allowguns) { Player.SendMessage(p, "Gun use is not allowed on this level."); p.aiming = false; return; }
-            if (p.hasflag != null) { Player.SendMessage(p, "You can't use a gun while you have the flag!"); return;}
+            if (p.hasflag != null) { Player.SendMessage(p, "You can't use a gun while you have the flag!"); return; }
             Pos cpos;
 
             if (p.aiming)
@@ -256,6 +257,7 @@ namespace MCDawn
                                                     comeOut = true;
                                                     break;
                                                 }
+
                                                 if (p.level.ctfmode)
                                                 {
                                                     pl.health = pl.health - 25;
@@ -266,7 +268,6 @@ namespace MCDawn
                                                         break;
                                                     }
                                                 }
-
 
                                                 if ((p.level.physics >= 3 && pl.level.physics != 5) && (bp.ending == 2 || bp.ending == 3)) { pl.HandleDeath(Block.stone, " was blown up by " + p.color + p.name, true); }
                                                 else if (bp.ending == 4)
@@ -340,8 +341,15 @@ namespace MCDawn
                                                     Command.all.Find("rules").Use(p, pl.name);
                                                 }
                                                 else { pl.HandleDeath(Block.stone, " was shot by " + p.color + p.name); }
+                                                
                                                 comeOut = true;
+                                                
+                                                Paintball.Paintball pb = new Paintball.Paintball();
+                                                if (pb.red.Contains(pl)) { pb.red.Remove(pl); }
+                                                if (pb.blue.Contains(pl)) { pb.blue.Remove(pl); }
 
+                                                Player.GlobalMessage(">> Shot distance: " + PosDifference(p, pl)); 
+                                              
                                                 // freeze, cage, bot, main, demote, promote, joker, kick, undo, redo, xban, rules");
 
                                             }
@@ -389,5 +397,9 @@ namespace MCDawn
 
         public struct CatchPos { public ushort x, y, z; }
         public struct Pos { public ushort x, y, z; public int ending; }
+        public string PosDifference(Player p, Player pl)
+        {
+            return Math.Round(Math.Sqrt(Math.Pow(pl.pos[0] - p.pos[0], 2) + Math.Pow(pl.pos[1] - p.pos[1], 2) + Math.Pow(pl.pos[2] - p.pos[2], 2))).ToString();
+        }
     }
 }

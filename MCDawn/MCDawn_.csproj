@@ -91,19 +91,103 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoSaver.cs" />
+    <Compile Include="Commands\Building\CmdBeacon.cs" />
     <Compile Include="Commands\Building\CmdDome.cs" />
     <Compile Include="Commands\Building\CmdReflection.cs" />
     <Compile Include="Commands\Building\CmdCone.cs" />
     <Compile Include="Commands\Building\CmdPyramid.cs" />
+    <Compile Include="Commands\Games\CmdPaintball.cs" />
     <Compile Include="Commands\Games\CmdPushBallTeam.cs" />
     <Compile Include="Commands\Homes\CmdHAllowGuns.cs" />
+    <Compile Include="Commands\Information\CmdAbout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdAfk.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdBlocks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdClones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdDevs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdHost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdInbox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdIrc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdLastCmd.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdLevels.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdMapInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdOpRules.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdPCount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdPhysics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdPlayers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdPortCheck.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdRules.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdServerReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdUnloaded.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdUpdate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdUpdates.cs" />
+    <Compile Include="Commands\Information\CmdViewRanks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Information\CmdWhowas.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Moderation\CmdAll.cs" />
+    <Compile Include="Commands\Moderation\CmdDetain.cs" />
+    <Compile Include="Commands\Moderation\CmdFlag.cs" />
+    <Compile Include="Commands\Moderation\CmdInstaMap.cs" />
+    <Compile Include="Commands\Moderation\CmdKillMobs.cs" />
+    <Compile Include="Commands\Moderation\CmdOP.cs" />
     <Compile Include="Commands\Moderation\CmdShowNames.cs" />
     <Compile Include="Commands\Moderation\CmdReport.cs" />
+    <Compile Include="Commands\Moderation\CmdSwear.cs" />
     <Compile Include="Commands\Other\CmdAdminChat.cs" />
     <Compile Include="Commands\Games\CmdAlive.cs" />
+    <Compile Include="Commands\Other\CmdC4.cs" />
     <Compile Include="Commands\Other\CmdClearChat.cs" />
     <Compile Include="Commands\Moderation\CmdCommandBlock.cs" />
     <Compile Include="Commands\Other\CmdDecline.cs" />
+    <Compile Include="Commands\Other\CmdExplosionLine.cs" />
     <Compile Include="Commands\Other\CmdFacepalm.cs" />
     <Compile Include="Commands\Other\CmdFakeRank.cs" />
     <Compile Include="Commands\Other\CmdGlobal.cs" />
@@ -118,6 +202,8 @@
     <Compile Include="Commands\Moderation\CmdMaintenence.cs" />
     <Compile Include="Commands\Building\CmdMiddle.cs" />
     <Compile Include="Commands\Moderation\CmdObUpdate.cs" />
+    <Compile Include="Commands\Other\CmdInfluence.cs" />
+    <Compile Include="Commands\Other\CmdInherit.cs" />
     <Compile Include="Commands\Other\CmdPlugin.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\Moderation\CmdPass.cs" />
@@ -125,6 +211,7 @@
     <Compile Include="Commands\Moderation\CmdPossess.cs" />
     <Compile Include="Commands\Other\CmdPrivate.cs" />
     <Compile Include="Commands\Games\CmdQueue.cs" />
+    <Compile Include="Commands\Other\CmdPunch.cs" />
     <Compile Include="Commands\Other\CmdRagequit.cs" />
     <Compile Include="Commands\Other\CmdReferee.cs" />
     <Compile Include="Commands\Other\CmdReview.cs" />
@@ -132,6 +219,8 @@
     <Compile Include="Commands\Moderation\CmdSetTime.cs" />
     <Compile Include="Commands\Games\CmdSpleef.cs" />
     <Compile Include="Commands\Moderation\CmdSummonMap.cs" />
+    <Compile Include="Commands\Other\CmdRotate.cs" />
+    <Compile Include="Commands\Other\CmdSuggest.cs" />
     <Compile Include="Commands\Other\CmdTColor.cs" />
     <Compile Include="Commands\Other\CmdCmdUnload.cs" />
     <Compile Include="Commands\Other\CmdCmdLoad.cs" />
@@ -142,7 +231,6 @@
     <Compile Include="Commands\Other\CmdGun.cs" />
     <Compile Include="Commands\Building\CmdClick.cs" />
     <Compile Include="Commands\Games\CmdCTFTeam.cs" />
-    <Compile Include="Commands\Information\CmdPCount.cs" />
     <Compile Include="Commands\Moderation\CmdTempBan.cs" />
     <Compile Include="Commands\Other\CmdSlap.cs" />
     <Compile Include="Commands\Other\CmdKill.cs" />
@@ -171,7 +259,6 @@
     <Compile Include="Commands\Homes\CmdHome.cs" />
     <Compile Include="Commands\Homes\CmdHWipe.cs" />
     <Compile Include="Commands\Homes\CmdHLockMap.cs" />
-    <Compile Include="Commands\Information\CmdOpRules.cs" />
     <Compile Include="Commands\Other\CmdRankChat.cs" />
     <Compile Include="Commands\Other\CmdCompLoad.cs" />
     <Compile Include="Commands\Homes\CmdHSave.cs" />
@@ -198,9 +285,6 @@
     <Compile Include="Commands\Homes\CmdHZone.cs" />
     <Compile Include="Commands\Moderation\CmdTempRank.cs" />
     <Compile Include="Commands\Moderation\CmdRevoke.cs" />
-    <Compile Include="Commands\Groups\CmdGroup.cs" />
-    <Compile Include="Commands\Groups\CmdCreateGroup.cs" />
-    <Compile Include="Commands\Groups\CmdDeleteGroup.cs" />
     <Compile Include="Commands\Other\CmdChatroom.cs" />
     <Compile Include="Commands\Other\CmdWomText.cs" />
     <Compile Include="Commands\Other\CmdP2P.cs" />
@@ -222,7 +306,6 @@
     <Compile Include="Commands\Building\CmdTop.cs" />
     <Compile Include="Commands\Building\CmdUnder.cs" />
     <Compile Include="Commands\Other\CmdUserDetail.cs" />
-    <Compile Include="Commands\Information\CmdPortCheck.cs" />
     <Compile Include="Commands\Building\CmdBrush.cs" />
     <Compile Include="Commands\Moderation\CmdHandcuff.cs" />
     <Compile Include="Commands\Moderation\CmdDiscourager.cs" />
@@ -243,8 +326,27 @@
     <Compile Include="Commands\GameControl\Games\Spleef.cs" />
     <Compile Include="Commands\GameControl\State.cs" />
     <Compile Include="Commands\Other\CmdSetWomPass.cs" />
-    <Compile Include="Games\Fallout.cs" />
-    <Compile Include="Games\PushBall.cs" />
+    <Compile Include="Commands\Other\CmdXTitle.cs" />
+    <Compile Include="Commands\Other\CmdXTColor.cs" />
+    <Compile Include="Games\CTFGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Games\Fallout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Games\GunGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Games\Infection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Games\Paintball.cs" />
+    <Compile Include="Games\PushBall.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Games\Spleef.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GUI\AddRemoveRemote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,15 +354,14 @@
       <DependentUpon>AddRemoveRemote.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\IsoCat.cs" />
+    <Compile Include="Item\Item.cs" />
+    <Compile Include="Item\ItemKickToken.cs" />
+    <Compile Include="PlayersFriend\PlayersFriend.cs" />
     <Compile Include="Player\PushBallTeam.cs" />
     <Compile Include="Plugins\Plugin.cs" />
     <Compile Include="Remote\Remote.cs" />
     <Compile Include="Database\MCDawnDB.cs" />
     <Compile Include="Discourager.cs" />
-    <Compile Include="Games\CTFGame.cs" />
-    <Compile Include="Games\GunGame.cs" />
-    <Compile Include="Games\Infection.cs" />
-    <Compile Include="Games\Spleef.cs" />
     <Compile Include="IRC\GlobalChatBot.cs" />
     <Compile Include="FindReference.cs" />
     <Compile Include="Color.cs" />
@@ -270,11 +371,7 @@
     <Compile Include="Commands\Other\CmdBotAI.cs" />
     <Compile Include="Commands\Other\CmdBotSet.cs" />
     <Compile Include="Commands\Other\CmdBots.cs" />
-    <Compile Include="Commands\Information\CmdDevs.cs" />
     <Compile Include="Commands\Building\CmdAbort.cs" />
-    <Compile Include="Commands\Information\CmdAbout.cs" />
-    <Compile Include="Commands\Information\CmdViewRanks.cs" />
-    <Compile Include="Commands\Information\CmdAfk.cs" />
     <Compile Include="Commands\Moderation\CmdBan.cs" />
     <Compile Include="Commands\Moderation\CmdBanip.cs" />
     <Compile Include="Commands\Building\CmdBind.cs" />
@@ -286,17 +383,13 @@
     </Compile>
     <Compile Include="Commands\Other\CmdGoto.cs" />
     <Compile Include="Commands\Moderation\CmdHacks.cs" />
-    <Compile Include="Commands\Information\CmdIrc.cs" />
     <Compile Include="Commands\Other\CmdHelp.cs" />
     <Compile Include="Commands\Moderation\CmdHide.cs" />
     <Compile Include="Commands\Building\CmdImageprint.cs" />
-    <Compile Include="Commands\Information\CmdInfo.cs" />
     <Compile Include="Commands\Moderation\CmdJoker.cs" />
     <Compile Include="Commands\Moderation\CmdKick.cs" />
     <Compile Include="Commands\Moderation\CmdKickban.cs" />
-    <Compile Include="Commands\Information\CmdLevels.cs" />
     <Compile Include="Commands\Moderation\CmdLoad.cs" />
-    <Compile Include="Commands\Information\CmdMapInfo.cs" />
     <Compile Include="Commands\Other\CmdMe.cs" />
     <Compile Include="Commands\Building\CmdMessageBlock.cs" />
     <Compile Include="Commands\Moderation\CmdModerate.cs" />
@@ -307,9 +400,7 @@
     <Compile Include="Commands\Building\CmdPaste.cs" />
     <Compile Include="Commands\Moderation\CmdPermissionBuild.cs" />
     <Compile Include="Commands\Moderation\CmdPermissionVisit.cs" />
-    <Compile Include="Commands\Information\CmdPhysics.cs" />
     <Compile Include="Commands\Building\CmdPlace.cs" />
-    <Compile Include="Commands\Information\CmdPlayers.cs" />
     <Compile Include="Commands\Building\CmdPortal.cs" />
     <Compile Include="Commands\Building\CmdRedo.cs" />
     <Compile Include="Commands\Building\CmdReplace.cs" />
@@ -317,10 +408,8 @@
     <Compile Include="Commands\Moderation\CmdRestart.cs" />
     <Compile Include="Commands\Moderation\CmdRestore.cs" />
     <Compile Include="Commands\Building\CmdRetrieve.cs" />
-    <Compile Include="Commands\Information\CmdRules.cs" />
     <Compile Include="Commands\Moderation\CmdSave.cs" />
     <Compile Include="Commands\Other\CmdSay.cs" />
-    <Compile Include="Commands\Information\CmdServerReport.cs" />
     <Compile Include="Commands\Moderation\CmdSetRank.cs" />
     <Compile Include="Commands\Moderation\CmdSetspawn.cs" />
     <Compile Include="Commands\Other\CmdSpawn.cs" />
@@ -328,7 +417,6 @@
     <Compile Include="Commands\Building\CmdSpin.cs" />
     <Compile Include="Commands\Building\CmdStore.cs" />
     <Compile Include="Commands\Other\CmdSummon.cs" />
-    <Compile Include="Commands\Information\CmdTime.cs" />
     <Compile Include="Commands\Other\CmdTnt.cs" />
     <Compile Include="Commands\Other\CmdTp.cs" />
     <Compile Include="Commands\Building\CmdTree.cs" />
@@ -336,14 +424,11 @@
     <Compile Include="Commands\Moderation\CmdUnbanip.cs" />
     <Compile Include="Commands\Moderation\CmdUndo.cs" />
     <Compile Include="Commands\Moderation\CmdUnload.cs" />
-    <Compile Include="Commands\Information\CmdUnloaded.cs" />
     <Compile Include="Commands\Moderation\CmdVoice.cs" />
     <Compile Include="Commands\Moderation\CmdWhitelist.cs" />
     <Compile Include="Commands\Other\CmdWhois.cs" />
-    <Compile Include="Commands\Information\CmdWhowas.cs" />
     <Compile Include="Commands\CommandList.cs" />
     <Compile Include="Commands\Building\CmdReplaceNot.cs" />
-    <Compile Include="Commands\Information\CmdHost.cs" />
     <Compile Include="Commands\Other\CmdInvincible.cs" />
     <Compile Include="Commands\Moderation\CmdLowlag.cs" />
     <Compile Include="Commands\Building\CmdLine.cs" />
@@ -351,14 +436,12 @@
     <Compile Include="Commands\Other\CmdTimer.cs" />
     <Compile Include="Commands\Building\CmdStatic.cs" />
     <Compile Include="Commands\Other\CmdSend.cs" />
-    <Compile Include="Commands\Information\CmdInbox.cs" />
     <Compile Include="Commands\Building\CmdStairs.cs" />
     <Compile Include="Commands\Other\CmdTitle.cs" />
     <Compile Include="Commands\Building\CmdOutline.cs" />
     <Compile Include="Commands\Moderation\CmdLimit.cs" />
     <Compile Include="Commands\Moderation\CmdClearBlockChanges.cs" />
     <Compile Include="Commands\Moderation\CmdReveal.cs" />
-    <Compile Include="Commands\Information\CmdClones.cs" />
     <Compile Include="Commands\Moderation\CmdFreeze.cs" />
     <Compile Include="Commands\Moderation\CmdFollow.cs" />
     <Compile Include="Commands\Building\CmdDelete.cs" />
@@ -372,7 +455,6 @@
     <Compile Include="Commands\Building\CmdReplaceAll.cs" />
     <Compile Include="Commands\Moderation\CmdDeleteLvl.cs" />
     <Compile Include="Commands\Other\CmdRide.cs" />
-    <Compile Include="Commands\Information\CmdUpdate.cs" />
     <Compile Include="Commands\Building\CmdCmdBind.cs" />
     <Compile Include="Commands\Other\CmdRepeat.cs" />
     <Compile Include="Commands\Other\CmdEmote.cs" />
@@ -381,10 +463,8 @@
     <Compile Include="Commands\Moderation\CmdRenameLvl.cs" />
     <Compile Include="Commands\Building\CmdHollow.cs" />
     <Compile Include="Commands\Moderation\CmdWhoip.cs" />
-    <Compile Include="Commands\Information\CmdBlocks.cs" />
     <Compile Include="Commands\Moderation\CmdBlockSet.cs" />
     <Compile Include="Commands\Moderation\CmdCmdSet.cs" />
-    <Compile Include="Commands\Information\CmdLastCmd.cs" />
     <Compile Include="Commands\Moderation\CmdFixGrass.cs" />
     <Compile Include="Commands\Building\CmdRainbow.cs" />
     <Compile Include="Commands\Other\CmdGive.cs" />
@@ -473,6 +553,7 @@
     <Compile Include="UpnpHelper.cs" />
     <EmbeddedResource Include="GUI\AddRemoveRemote.resx">
       <DependentUpon>AddRemoveRemote.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Chat.resx">
       <DependentUpon>Chat.cs</DependentUpon>
@@ -522,6 +603,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\ItemSkeleClass.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

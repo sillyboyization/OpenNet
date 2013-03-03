@@ -86,6 +86,18 @@ namespace MCDawn
         public string prefix = "";
         public string title = "";
         public string titlecolor;
+        //for gun info after shooting
+        public bool seeGunShotInfo()
+        {
+            //A little help from Group class lul
+            string[] lines = File.ReadAllLines("text/seegundistance.txt");
+            foreach (string s in lines) 
+            {
+                if (s.Contains(this.name))
+                    return true;
+            }
+            return false;
+        }
         // Title Brackets
         // 0 = [], 1 = (), 2 = {}, 3 = ~~, 4 = <>
         public int titlebracket = 0;
@@ -124,6 +136,8 @@ namespace MCDawn
         public int pushBallGoals = 0;
         // Fallout
         public bool FalloutAlive = true;
+        // Detention
+        public bool detained = false;
 
         public bool deleteMode = false;
         public bool ignorePermission = false;
@@ -217,6 +231,8 @@ namespace MCDawn
         public bool isFlying = false;
 
         public bool joker = false;
+        // Accept Swear Word
+        public bool dontseeSwear = false;
         // Admin Security
         public bool unverified = false;
         public bool grantpassed = false;
@@ -250,6 +266,10 @@ namespace MCDawn
         public bool teamchat = false;
         public int health = 100;
 
+        //Paintball
+        public int paintballLeft = 50;
+        public Paintball.Item mounting;
+
         //Copy
         public List<CopyPos> CopyBuffer = new List<CopyPos>();
         public struct CopyPos { public ushort x, y, z; public byte type; }
@@ -270,7 +290,6 @@ namespace MCDawn
         public Level level = Server.mainLevel;
 
         public string prevMsg = "";
-
 
         //Movement
         public ushort oldBlock = 0;
@@ -340,6 +359,9 @@ namespace MCDawn
         public delegate void OnPlayerCommandEventHandler(Player p, string cmd, string message);
         public static event OnPlayerCommandEventHandler OnPlayerCommandEvent = null;
 
+        public delegate void OnPlayerPhillUsageEventHandler(Player p, string cmd);
+        public static event OnPlayerPhillUsageEventHandler OnPlayerPhillEvent = null;
+
         public delegate void OnCommandEventHandler(string cmd, string message);
         public event OnCommandEventHandler OnCommandEvent = null;
 
@@ -367,6 +389,14 @@ namespace MCDawn
         ushort[] basepos = new ushort[3] { 0, 0, 0 };
         public byte[] rot = new byte[2] { 0, 0 };
         byte[] oldrot = new byte[2] { 0, 0 };
+
+        //Custom Mark Command Building Thing D:
+        public ushort[] firstMark = new ushort[3] { 0, 0, 0 };
+        public ushort[] secondMark = new ushort[3] { 0, 0, 0 };
+
+        //C4
+        public ushort[] bombpos = new ushort[3] { 0, 0, 0 };
+        public bool setBomb = false;
 
         // Grief/Block Spam Detection
         public static int spamBlockCount = 200;
@@ -3154,8 +3184,6 @@ namespace MCDawn
                     switch (cmd.ToLower())
                     {
                         //Check for command switching
-                        case "op": message = message + " " + Group.findPerm(LevelPermission.Operator).name; cmd = "setrank"; break;
-                        case "deop": message = message + " " + Group.findPerm(LevelPermission.Guest).name; cmd = "setrank"; break;
                         case "cut": cmd = "copy"; message = "cut"; break;
                         case "banned": message = cmd; cmd = "viewranks"; break;
 
@@ -3868,6 +3896,7 @@ namespace MCDawn
         public static void GlobalChat(Player from, string message) { GlobalChat(from, message, true); }
         public static void GlobalChat(Player from, string message, bool showname)
         {
+            List<string> commonSwearWords = new List<string>() { "fuck", "bitch", "shit", "whore", "dick", "cunt" };
             if (showname) 
             { 
                 message = from.color + from.voicestring + from.color + from.prefix + from.displayName + ": &f" + message;
@@ -4060,6 +4089,7 @@ namespace MCDawn
         }
         public static void ChatroomChat(Player from, string whichChatroom, string message)
         {
+            List<string> commonSwearWords = new List<string>() { "fuck", "shit", "bitch", "whore", "cunt", "dick" };
             if (from == null || from.chatroom == "" || whichChatroom == "" || message == "" || from.muted) { return; }
             message = from.color + from.displayName + ": &f" + message;
             message = "&b<" + from.chatroom + "> " + message;
@@ -4069,6 +4099,21 @@ namespace MCDawn
                 {
                     if (from != null && p.ignoreList.Contains(from.name.ToLower())) { return; }
                     if (p.deafened) { return; }
+                    if (p.dontseeSwear)
+                    {
+                        foreach (string swords in commonSwearWords)
+                        {
+                            if (message.Contains(swords))
+                            {
+                                if (p.level.worldChat)
+                                {
+                                    message.Replace(swords, "<CENSORED>");
+                                    Player.SendMessage(p, message);
+                                    return;
+                                }
+                            }
+                        }
+                    }
                     if (p.level.worldChat) Player.SendMessage(p, message);
                 }
             });

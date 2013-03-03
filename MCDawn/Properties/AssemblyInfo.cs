@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MCDawn")]
-[assembly: AssemblyDescription("Minecraft Classic Server Software")]
+[assembly: AssemblyTitle("VanillaIceCream")]
+[assembly: AssemblyDescription("MCDawn-based software for AsiaNet")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MCDawn Dev Team")]
 [assembly: AssemblyProduct("MCDawn")]
@@ -34,4 +34,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.1.8")]
 //[assembly: AssemblyVersion("1.0.1.8")]
 //[assembly: AssemblyFileVersion("1.0.1.8")]
-[assembly: AssemblyVersion("1.0.1.8")]
+[assembly: AssemblyVersion("1.0.0.0")]
