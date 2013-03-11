@@ -268,7 +268,29 @@ namespace MCDawn
 
         //Paintball
         public int paintballLeft = 50;
-        public Paintball.Item mounting;
+
+        //Cuboid
+        public bool usePerPersonCuboidLimit = false;
+        public ushort maxCuboidPerPersonLimit { get; set; }
+
+        public ushort[] cpos1 = new ushort[] { 0, 0, 0 };
+        public ushort[] cpos2 = new ushort[] { 0, 0, 0 };
+        public byte cblock = 0;
+        public bool cuboidEmpty(ushort[] u) 
+        {
+            if (u[0] == 0 && u[1] == 0 && u[2] == 0) 
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void markCuboidPos(ushort[] u, ushort x, ushort y, ushort z) 
+        {
+            u[0] = x;
+            u[1] = y;
+            u[2] = z;
+        }
 
         //Copy
         public List<CopyPos> CopyBuffer = new List<CopyPos>();

@@ -321,6 +321,8 @@ namespace MCDawn
             all.Add(new CmdOP());
             all.Add(new CmdBeacon());
             //----- kill distance in gun
+            all.Add(new CmdMark()); 
+            all.Add(new CmdFCuboid()); //experiment with cuboid for system
 
             #endregion 
 

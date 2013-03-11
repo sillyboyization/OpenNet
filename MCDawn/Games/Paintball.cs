@@ -5,11 +5,11 @@
 
 using System;
 using System.Collections.Generic; //for teams
-using System.Text; //for list of player in teams
+using System.Text; //for list-to-string of player in teams
 
 namespace MCDawn.Paintball
 {
-    public class PaintballCore: Paintball
+    public class PaintballCore : Paintball
     {
         #region Core Component
 
@@ -183,8 +183,10 @@ namespace MCDawn.Paintball
     /* holds information... 
      * for organization puposes.. only 
      */
-    class Paintball
+    public class Paintball
     {
+        #region Infomation/Properties
+
         public int gameTimeLeft = 180; //3 mins
         public const int defaultGameTime = 180;
         public int time = 60;
@@ -224,6 +226,7 @@ namespace MCDawn.Paintball
             }
             else { return "Blue"; }
         }
+        #endregion
     }
 
     abstract class Item 

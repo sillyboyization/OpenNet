@@ -93,6 +93,8 @@
     <Compile Include="AutoSaver.cs" />
     <Compile Include="Commands\Building\CmdBeacon.cs" />
     <Compile Include="Commands\Building\CmdDome.cs" />
+    <Compile Include="Commands\Building\CmdFCuboid.cs" />
+    <Compile Include="Commands\Building\CmdMark.cs" />
     <Compile Include="Commands\Building\CmdReflection.cs" />
     <Compile Include="Commands\Building\CmdCone.cs" />
     <Compile Include="Commands\Building\CmdPyramid.cs" />
@@ -174,7 +176,6 @@
     </Compile>
     <Compile Include="Commands\Moderation\CmdAll.cs" />
     <Compile Include="Commands\Moderation\CmdDetain.cs" />
-    <Compile Include="Commands\Moderation\CmdFlag.cs" />
     <Compile Include="Commands\Moderation\CmdInstaMap.cs" />
     <Compile Include="Commands\Moderation\CmdKillMobs.cs" />
     <Compile Include="Commands\Moderation\CmdOP.cs" />
@@ -340,6 +341,7 @@
     <Compile Include="Games\Infection.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Games\MobSurvival.cs" />
     <Compile Include="Games\Paintball.cs" />
     <Compile Include="Games\PushBall.cs">
       <SubType>Code</SubType>
@@ -354,8 +356,6 @@
       <DependentUpon>AddRemoveRemote.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\IsoCat.cs" />
-    <Compile Include="Item\Item.cs" />
-    <Compile Include="Item\ItemKickToken.cs" />
     <Compile Include="PlayersFriend\PlayersFriend.cs" />
     <Compile Include="Player\PushBallTeam.cs" />
     <Compile Include="Plugins\Plugin.cs" />
@@ -603,9 +603,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Item\ItemSkeleClass.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
